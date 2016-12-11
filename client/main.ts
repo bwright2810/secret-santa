@@ -28,21 +28,29 @@ Template['recipientsGrid'].helpers({
 
 Template['recipientsGrid'].events({
     'click input': (event, instance) => {
-        processInputClick(event);
+        if (Template.instance()['authenticated'].get()) {
+            processInputClick(event);
+        }
     },
     'click textarea': (event, instance) => {
-        processInputClick(event);
+        if (Template.instance()['authenticated'].get()) {
+            processInputClick(event);
+        }
     },    
     'keyup input': (event, instance) => {
-        updateData(event);
+        if (Template.instance()['authenticated'].get()) {
+            updateData(event);
+        }
     },
     'keyup textarea': (event, instance) => {
-        updateData(event);
+        if (Template.instance()['authenticated'].get()) {
+            updateData(event);
+        }
     },
     'submit .form-password': (event, instance) => {
         event.preventDefault();
         var enteredPass = event.target[0].value;
-        if (enteredPass === "wrightfamily") {
+        if (enteredPass === "calvin") {
             instance['authenticated'].set(true);
         } else {
             event.target[0].value = '';

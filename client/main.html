@@ -10,7 +10,7 @@
 
 <template name="recipientsGrid">
 <!-- authenticated -->
-  {{#if true}}
+  {{#if authenticated}}
     <div style="display:inline-block;text-align:center;">
       {{#each rec in getRecipients}}
         {{> recipient data=rec}}
@@ -37,7 +37,7 @@
       <textarea id='quote-{{data.name}}' name='quote-input' style="border: none;width:300px;font-style:italic;" placeholder="A short quote about this person...">{{data.quote}}</textarea>
       <br><br>
       <input id="gift1-{{data.name}}" name='gift1-input' type="text" style="border: none;
-        border-bottom: 2px solid black;width:300px;" value="{{data.gifts.[0]}}"/><br><br>
+        border-bottom: 2px solid black;width:300px;" value="{{data.gifts.[0]}}" placeholder="Enter the gifts you'd like..."/><br><br>
       <input id="gift2-{{data.name}}" name='gift2-input' type="text" style="border: none;width:300px;
       border-bottom: 2px solid black;" value="{{data.gifts.[1]}}"/><br><br>
       <input id="gift3-{{data.name}}" name='gift3-input' type="text" style="border: none;width:300px;
