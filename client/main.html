@@ -1,0 +1,47 @@
+<head>
+  <title>secret-santa</title>
+</head>
+
+<body>
+  <center><h1>Secret Santa</h1></center>
+
+  {{> recipientsGrid}}  
+</body>
+
+<template name="recipientsGrid">
+<!-- authenticated -->
+  {{#if true}}
+    <div style="display:inline-block;text-align:center;">
+      {{#each rec in getRecipients}}
+        {{> recipient data=rec}}
+      {{/each}}
+    </div>
+  {{else}}
+    <center>
+      Password:<br>
+      <form class="form-password">
+        <input name="pass" type="password" autofocus />
+        <input type="submit" style="position: absolute; left: -9999px"/>
+      </form>
+    </center> 
+  {{/if}}
+</template>
+
+<template name="recipient">
+  <div style="float:left;padding-left: 150px;padding-top: 20px;">
+    <div style="float:left">
+      <img src="{{data.imagepath}}" width="350px" height="350px"/>
+    </div>
+    <div style="float:right;padding-top: 5px;" id='{{data.name}}'>
+      <h3>{{data.name}}</h3>
+      <textarea id='quote-{{data.name}}' name='quote-input' style="border: none;width:300px;font-style:italic;" placeholder="A short quote about this person...">{{data.quote}}</textarea>
+      <br><br>
+      <input id="gift1-{{data.name}}" name='gift1-input' type="text" style="border: none;
+        border-bottom: 2px solid black;width:300px;" value="{{data.gifts.[0]}}"/><br><br>
+      <input id="gift2-{{data.name}}" name='gift2-input' type="text" style="border: none;width:300px;
+      border-bottom: 2px solid black;" value="{{data.gifts.[1]}}"/><br><br>
+      <input id="gift3-{{data.name}}" name='gift3-input' type="text" style="border: none;width:300px;
+      border-bottom: 2px solid black;" value="{{data.gifts.[2]}}"/>
+    </div>
+  </div>
+</template>
