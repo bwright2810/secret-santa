@@ -105,9 +105,9 @@ function updateData(event) {
             }
         }
         var recipientDiv = $('#' + rec_name);
-        var inputs = recipientDiv.find("input");
+        var inputs = recipientDiv.find("textarea");
         var newQuote = recipientDiv.find("textarea")[0].value;
-        Recipients.update(recId, { $set: { gifts: [inputs[0].value, inputs[1].value, inputs[2].value], quote: newQuote }});
+        Recipients.update(recId, { $set: { gifts: [inputs[1].value, inputs[2].value, inputs[3].value], quote: newQuote }});
     } else {
         event.preventDefault();
     }
