@@ -30,17 +30,17 @@
 <template name="recipient">
   <div style="float:left;padding-left: 20px;padding-top: 20px;">
     <div style="float:left">
-      <img src="{{data.imagepath}}" width="350px" height="350px"/>
+      <img src="{{data.imagepath}}" width="300px" height="350px"/>
     </div>
     <div style="float:right;padding-top: 5px;" id='{{data.name}}'>
       <h3>{{data.name}}</h3>
-      <textarea id='quote-{{data.name}}' name='quote-input' style="border: none;width:300px;font-style:italic;" placeholder="A short quote about this person...">{{data.quote}}</textarea>
+      <textarea id='quote-{{data.name}}' name='quote-input' style="border: none;width:450px;font-style:italic;" placeholder="A short quote about this person...">{{data.quote}}</textarea>
       <br><br>
       <textarea id="gift1-{{data.name}}" name='gift1-input' style="border: none;
-        border-bottom: 2px solid black;width:500px;" value="{{data.gifts.[0]}}" placeholder="Enter the gifts you'd like..."></textarea><br><br>
-      <textarea id="gift2-{{data.name}}" name='gift2-input' style="border: none;width:500px;
+        border-bottom: 2px solid black;width:450px;" value="{{data.gifts.[0]}}" placeholder="Enter the gifts you'd like..."></textarea><br><br>
+      <textarea id="gift2-{{data.name}}" name='gift2-input' style="border: none;width:450px;
       border-bottom: 2px solid black;" value="{{data.gifts.[1]}}"></textarea><br><br>
-      <textarea id="gift3-{{data.name}}" name='gift3-input' style="border: none;width:500px;
+      <textarea id="gift3-{{data.name}}" name='gift3-input' style="border: none;width:450px;
       border-bottom: 2px solid black;" value="{{data.gifts.[2]}}"></textarea>
     </div>
   </div>
